@@ -4,52 +4,60 @@
     id="app-header"
     dense
     fixed
+    style="z-index: 10;"
   >
-    <v-img
-      :src="logo"
-      class="mr-4"
-      contain
-      height="auto"
-      width="48"
-      max-width="48"
-      @click="$router.push('/')"
-    />
-    <v-menu
-      v-for="(item, i) in menu"
-      :key="i"
-      open-on-hover
-      bottom
-      offset-y
+    <v-container
+      fill-height
+      grid-list-xl
+      py-0
     >
-      <template v-slot:activator="{ on }">
-        <v-btn
-          :to="item.to"
-          active-class="text-primary"
-          class="btnH"
-          style="font-size: 14px;"
-          text
-          v-on="on"
-        >
-          {{ item.text }}
-        </v-btn>
-      </template>
-      <v-list v-if="item.items!=null">
-        <v-list-item
-          v-for="(link, i) in item.items"
-          :key="i"
-          :to="link.to"
-        >
-          <v-list-item-title>{{ link.text }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-menu>
-    <v-spacer />
-    <div style="font-size: 14px;">
-      <span>Welcome visitor, you can </span>
-      <router-link to="/">login </router-link>
-      <span>or </span>
-      <router-link to="/">create an account</router-link>
-    </div>
+      <v-img
+        :src="logo"
+        class="mr-4"
+        contain
+        height="auto"
+        width="48"
+        max-width="48"
+        @click="$router.push('/')"
+      />
+      <v-menu
+        v-for="(item, i) in menu"
+        :key="i"
+        open-on-hover
+        bottom
+        offset-y
+      >
+        <template v-slot:activator="{ on }">
+          <v-btn
+            :to="item.to"
+            active-class="text-primary"
+            class="btnH"
+            style="font-size: 14px;"
+            text
+            v-on="on"
+          >
+            {{ item.text }}
+          </v-btn>
+        </template>
+        <v-list v-if="item.items!=null">
+          <v-list-item
+            v-for="(link, i) in item.items"
+            :key="i"
+            :to="link.to"
+            active-class="text-primary"
+          >
+            <v-list-item-title>{{ link.text }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+      <v-spacer />
+      <div style="font-size: 14px;">
+        <span>Welcome visitor, you can </span>
+        <router-link to="/">login </router-link>
+        <span>or </span>
+        <router-link to="/">create an account</router-link>
+      </div>
+    </v-container>
   </v-app-bar>
 </template>
 
@@ -145,6 +153,20 @@ export default {
             text: 'Notifications'
           }
         ]
+      },
+      {
+        text: 'Home & Art',
+        to: null,
+        items: [
+          {
+            to: '/home-decor',
+            text: 'Home Décor'
+          },
+          {
+            to: '/art',
+            text: 'Art & Craft Supplies'
+          }
+        ]
       }
     ],
     responsive: false
@@ -180,17 +202,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-  #app-header {
-    .btnH {
-      margin: auto;
-      &:hover {
-        background-color: #9900cc2e;
-      }
-      &:active {
-        background-color: #9900cc59;
-      }
-    }
-  }
-</style>

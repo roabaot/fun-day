@@ -11,7 +11,6 @@
   >
     <template v-slot:activator="{ on }">
       <v-btn
-        slot="activator"
         class="elevation-0"
         color="grey"
         dark

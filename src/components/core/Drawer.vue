@@ -40,7 +40,8 @@
           :key="i"
           :to="link.to"
           active-class="purple"
-          class="v-list-item"
+          color="white"
+          class="v-list-item btnH main-search"
         >
           <v-list-item-icon>
             <v-icon>{{ link.icon }}</v-icon>
@@ -54,7 +55,6 @@
       <template v-slot:append>
           <v-list-item
             disabled
-            active-class="primary"
             class="v-list-item v-list-item--buy"
             to="/upgrade"
           >
@@ -170,7 +170,11 @@ export default {
     }
 
     .v-list-item--active {
-      box-shadow: 0 0px 20px -10px rgb(231, 153, 255), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 0px 5px -5px rgb(231, 153, 255) !important;
+      box-shadow: unset !important;
+      
+      &::before {
+        opacity: 0;
+      }
     }
 
     .search-input {

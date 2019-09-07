@@ -8,7 +8,6 @@
   >
     <v-container
       fill-height
-      fluid
       grid-list-xl
     >
       <v-toolbar-title
@@ -36,7 +35,7 @@
         >
           <v-text-field
             v-if="responsiveInput"
-            class="mr-4 mt-2 purple-input"
+            class="mr-4 mt-2 purple-input main-search"
             label="Search..."
             hide-details
             color="purple"
@@ -48,45 +47,48 @@
           >
             <v-icon color="tertiary">mdi-view-dashboard</v-icon>
           </router-link>
-          <v-menu
-            bottom
-            left
-            content-class="dropdown-menu"
-            offset-y
-            transition="slide-y-transition">
-            <template v-slot:activator="{ on }">
-              <router-link
-                v-ripple
-                slot="activator"
-                class="toolbar-items"
-                to="/notifications"
-                v-on="on"
-              >
-                <v-badge
-                  color="error"
-                  overlap
-                >
-                  <template slot="badge">
-                    {{ notifications.length }}
-                  </template>
-                  <v-icon color="tertiary">mdi-bell</v-icon>
-                </v-badge>
-              </router-link>
-            </template>
-            <v-card>
-              <v-list dense>
+          
+            <v-menu
+              bottom
+              left
+              content-class="v-menu__content"
+              offset-y
+              transition="slide-y-transition">
+              <template v-slot:activator="{ on }">
                 <v-list-item
-                  v-for="notification in notifications"
-                  :key="notification"
-                  @click="onClick"
+                  tag="router-link"
+                  style="flex: 1 0 0"
+                  v-ripple
+                  class="toolbar-items unactive"
+                  to="/notifications"
+                  v-on="on"
                 >
-                  <v-list-item-title
-                    v-text="notification"
-                  />
+                  <v-badge
+                    color="error"
+                    overlap
+                  >
+                    <template slot="badge">
+                      {{ notifications.length }}
+                    </template>
+                    <v-icon color="tertiary">mdi-bell</v-icon>
+                  </v-badge>
                 </v-list-item>
-              </v-list>
-            </v-card>
-          </v-menu>
+              </template>
+              <v-card>
+                <v-list dense>
+                  <v-list-item
+                    v-for="notification in notifications"
+                    :key="notification"
+                    @click="onClick"
+                  >
+                    <v-list-item-title
+                      v-text="notification"
+                    />
+                  </v-list-item>
+                </v-list>
+              </v-card>
+            </v-menu>
+          
           <router-link
             v-ripple
             class="toolbar-items"
@@ -157,8 +159,16 @@ export default {
 }
 </script>
 
-<style>
-  #core-toolbar a {
+<style lang="scss">
+  #core-toolbar {
+    a {
     text-decoration: none;
+    }
+    .unactive {
+        
+        &:before {
+          background-color: unset;
+        }
+      }
   }
 </style>
