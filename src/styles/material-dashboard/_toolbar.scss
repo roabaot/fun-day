@@ -40,6 +40,10 @@
         min-height: $list-item-height;
         padding: $padding-small $padding-general;
 
+        &:hover {
+          background-color: $brand-hover;
+        }
+
         .v-badge__badge {
           border: $badge-border !important;
           font-size: $font-size-mini;
@@ -56,8 +60,12 @@
         }
       }
 
+      .main-search {
+        margin: 0 20px;
+      }
+
       .v-input {
-        margin: 0 !important;
+        margin: 0;
         padding: 0;
       }
     }

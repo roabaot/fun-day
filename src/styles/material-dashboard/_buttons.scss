@@ -99,3 +99,13 @@
 .v-btn:hover:before {
   background-color: transparent;
 }
+
+.btnH {
+  margin: auto;
+  &:hover {
+    background-color: $brand-hover;
+  }
+  &:active {
+    background-color: $brand-active;
+  }
+}

@@ -18,6 +18,10 @@
     font-size: $font-size-default;
     font-weight: $font-weight-base;
   }
+  
+}
+.main-search {
+  min-width: 200px;
 }
 
 .theme--light.v-input:not(.v-input--is-disabled) input,

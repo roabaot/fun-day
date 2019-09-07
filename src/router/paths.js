@@ -8,10 +8,9 @@ export default [
   {
     path: '/',
     view: 'Home'
-  },/*
+  },
   {
     path: '/dashboard',
-    // Relative to /src/views
     view: 'Dashboard'
   },
   {
@@ -44,6 +43,6 @@ export default [
     path: '/upgrade',
     name: 'Upgrade to PRO',
     view: 'Upgrade'
-  }*/
+  }
 ]
 
