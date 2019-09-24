@@ -53,9 +53,9 @@
       <v-spacer />
       <div style="font-size: 14px;">
         <span>Welcome visitor, you can </span>
-        <router-link to="/">login </router-link>
+        <router-link to="/signin">login </router-link>
         <span>or </span>
-        <router-link to="/">create an account</router-link>
+        <router-link to="/signup">create an account</router-link>
       </div>
     </v-container>
   </v-app-bar>
@@ -156,14 +156,14 @@ export default {
       },
       {
         text: 'Home & Art',
-        to: null,
+        to: '/home&art',
         items: [
           {
-            to: '/home-decor',
+            to: '/home&art/home-decor',
             text: 'Home Décor'
           },
           {
-            to: '/art',
+            to: '/home&art/art',
             text: 'Art & Craft Supplies'
           }
         ]

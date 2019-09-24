@@ -19,12 +19,12 @@
       &copy;
       {{ (new Date()).getFullYear() }}
       <a
-        href="https://www.creative-tim.com/"
-        target="_blank">Creative Tim</a>, made with
+        href="/"
+        target="_blank">Fun day</a>, made with
       <v-icon
-        color="tertiary"
+        color="error"
         size="17">mdi-heart</v-icon>
-      for a better web
+      for a e-store
     </span>
   </v-footer>
 </template>
