@@ -148,9 +148,8 @@
           <v-btn
             slot="button"
             text
-            flat
             class="text-primary btnH"
-            to="/"
+            to="@"
           >
             more
             <v-icon color="text-primary">mdi-view-list</v-icon>
@@ -249,9 +248,8 @@
           <v-btn
             slot="button"
             text
-            flat
             class="text-primary btnH"
-            to="/"
+            to="@"
           >
             more
             <v-icon color="text-primary">mdi-view-list</v-icon>
@@ -268,7 +266,6 @@
         >
           <v-slide-group
             class="pa-4"
-            active-class="success"
             show-arrows
           >
             <v-slide-item
@@ -408,6 +405,12 @@ export default {
             }
           }
         }
+      }
+    }
+    .v-slide-group {
+      .v-slide-group__prev,
+      .v-slide-group__next {
+        display: flex;
       }
     }
   }

@@ -43,6 +43,30 @@ export default [
     path: '/upgrade',
     name: 'Upgrade to PRO',
     view: 'Upgrade'
+  },
+  {
+    path: '/signup',
+    view: 'SignUp',
+    name: 'Sign Up'
+  },
+  {
+    path: '/signin',
+    view: 'SignIn',
+    name: 'Sign In'
+  },
+  {
+    path: '/home&art',
+    view: 'HomeAndArt',
+    name: 'Home And Art'
+  },
+  {
+    path: '/home&art/art',
+    view: 'Art',
+  },
+  {
+    path: '/home&art/home-decor',
+    view: 'HomeDecor',
+    name: 'Home Décor'
   }
 ]
 
